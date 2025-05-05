@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agencja Nieruchomości – Strona Główna</title>
+  </head>
+  <body>
+    <!--
+    1 · TOPBAR
+    później → /patterns/topbar.php
+  -->
+    <header id="topbar">
+      <div>
+        <!-- telefon -->
+        <a href="tel:+48123456789">+48 123 456 789</a>
+        <!-- e-mail -->
+        <a href="mailto:biuro@agencjaxyz.pl">biuro@agencjaxyz.pl</a>
+      </div>
+    </header>
+
+    <!--
+    2 · NAWIGACJA
+    później → /patterns/navigation.php
+  -->
+    <nav id="main-nav" aria-label="Główne menu">
+      <ul>
+        <li><a href="#hero">Start</a></li>
+        <li><a href="#featured">Oferty</a></li>
+        <li><a href="#about">O nas</a></li>
+        <li><a href="#process">Proces</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!--
+      3 · HERO + WYSZUKIWARKA
+      później → /patterns/hero-search.php
+    -->
+      <section id="hero" role="region" aria-label="Hero">
+        <h1>Znajdź idealną nieruchomość</h1>
+        <form id="property-search" role="search" action="/oferty" method="get">
+          <!-- pole „Adres / słowo klucz” -->
+          <label for="search-keyword" class="visually-hidden"
+            >Adres lub słowo klucz</label
+          >
+          <input
+            type="search"
+            id="search-keyword"
+            name="s"
+            placeholder="Adres, dzielnica..."
+          />
+
+          <!-- pole „Typ nieruchomości” -->
+          <label for="search-type" class="visually-hidden"
+            >Typ nieruchomości</label
+          >
+          <select id="search-type" name="property_type">
+            <option value="">Wszystkie typy</option>
+            <option value="dom">Domy</option>
+            <option value="mieszkanie">Mieszkania</option>
+            <option value="dzialka">Działki</option>
+          </select>
+
+          <!-- przycisk szukaj -->
+          <button type="submit">Przeszukaj</button>
+        </form>
+      </section>
+    </main>
+
+    <!--
+    później → wp_footer()
+  --></body>
+</html>
